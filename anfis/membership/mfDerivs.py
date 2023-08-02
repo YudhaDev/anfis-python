@@ -1,5 +1,9 @@
+import time
+
 import numpy as np
 
+global_mean_count = 0
+global_sigma_count = 0
 
 def partial_dMF(x, mf_definition, partial_parameter):
     """Calculates the partial derivative of a membership function at a point x.
@@ -14,16 +18,30 @@ def partial_dMF(x, mf_definition, partial_parameter):
     ------
 
     """
+
+    global global_mean_count
+    global global_sigma_count
+
     mf_name = mf_definition[0]
 
     if mf_name == 'gaussmf':
+        print ("masuk gaussmf")
+        # time.sleep(2)
 
         sigma = mf_definition[1]['sigma']
         mean = mf_definition[1]['mean']
 
         if partial_parameter == 'sigma':
+            print ("masuk sigma")
+            global_sigma_count +=1
+            # time.sleep(2)
+
             result = (2./sigma**3) * np.exp(-(((x-mean)**2)/(sigma)**2))*(x-mean)**2
         elif partial_parameter == 'mean':
+            print ("masuk mean")
+            global_mean_count +=1
+            # time.sleep(2)
+
             result = (2./sigma**2) * np.exp(-(((x-mean)**2)/(sigma)**2))*(x-mean)
 
     elif mf_name == 'gbellmf':
@@ -55,4 +73,5 @@ def partial_dMF(x, mf_definition, partial_parameter):
                 np.power((np.exp(c * (x - c))) + 1, 2)
 
 
+    print("Hasil Deriv:"+ str(result))
     return result
