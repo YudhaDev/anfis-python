@@ -80,10 +80,6 @@ class ANFIS:
             self.consequents = layerFive
             layerFive = np.dot(layerFour, layerFive)
 
-            print(self.Y)
-            print(layerFive)
-            print(layerFive.T)
-            sys.exit()
 
             # error disini
             error = np.sum((self.Y - layerFive.T) ** 2)

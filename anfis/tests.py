@@ -133,7 +133,26 @@ mf.append(berat_mean_sigma)
 #     ],
 # ]
 
-mfc = membership.membershipfunction.MemFuncs(mf)
+mf2 = [
+    [
+        ['gaussmf', {'mean': 9.26, 'sigma': 1}],
+        ['gaussmf', {'mean': 9.26, 'sigma': 33.33}],
+        ['gaussmf', {'mean': 9.26, 'sigma': 66.67}],
+        ['gaussmf', {'mean': 9.26, 'sigma': 100}]
+    ],
+    [
+        ['gaussmf', {'mean': 35.38, 'sigma': 1}],
+        ['gaussmf', {'mean': 35.38, 'sigma': 100}],
+        ['gaussmf', {'mean': 35.38, 'sigma': 200}]
+    ],
+    [
+        ['gaussmf', {'mean': 35.39, 'sigma': 1}],
+        ['gaussmf', {'mean': 35.38, 'sigma': 100}],
+        ['gaussmf', {'mean': 35.37, 'sigma': 200}]
+    ],
+]
+
+mfc = membership.membershipfunction.MemFuncs(mf2)
 anf = anfis.ANFIS(X, Y, mfc)
 anf.trainHybridJangOffLine(epochs=20)
 print(round(anf.consequents[-1][0], 6))
