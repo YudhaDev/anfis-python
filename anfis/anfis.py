@@ -71,10 +71,19 @@ class ANFIS:
 
             # layer five: least squares estimate
             layerFive = np.array(self.LSE(layerFour, self.Y, initialGamma))
-            print(layerFour)
-            sys.exit()
+
+            ## Edit ku
+            # print(layerFour)
+            # sys.exit()
+            ##
+
             self.consequents = layerFive
             layerFive = np.dot(layerFour, layerFive)
+
+            print(self.Y)
+            print(layerFive)
+            print(layerFive.T)
+            sys.exit()
 
             # error disini
             error = np.sum((self.Y - layerFive.T) ** 2)

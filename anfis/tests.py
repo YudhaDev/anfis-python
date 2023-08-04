@@ -20,10 +20,16 @@ for value in X:
 
 # ini untuk menentukan Kurva fuzzy gaussian
 # penjelasan: https://www.youtube.com/watch?v=vG6aZEgbAVU
+# umur_1 = numpy.linspace(0, 15, 16)  # 0-15 umur_muda
+# umur_2 = numpy.linspace(16, 30, 15)  # 16-30 umur dewasa muda
+# umur_3 = numpy.linspace(31, 50, 15)  # 31-50 umur dewasa lanjut
+# umur_4 = numpy.linspace(51, 100, 15)  # 50-100 umur lansia
+
 umur_1 = numpy.linspace(0, 15, 16)  # 0-15 umur_muda
-umur_2 = numpy.linspace(16, 30, 15)  # 16-30 umur dewasa muda
-umur_3 = numpy.linspace(31, 50, 15)  # 31-50 umur dewasa lanjut
-umur_4 = numpy.linspace(51, 100, 15)  # 50-100 umur lansia
+umur_2 = numpy.linspace(13, 30, 18)  # 16-30 umur dewasa muda
+umur_3 = numpy.linspace(28, 50, 18)  # 31-50 umur dewasa lanjut
+umur_4 = numpy.linspace(58, 100, 18)  # 50-100 umur lansia
+
 
 umur = []
 umur.append(umur_1)
@@ -31,10 +37,16 @@ umur.append(umur_2)
 umur.append(umur_3)
 umur.append(umur_4)
 
+# tinggi_1 = numpy.linspace(0, 50, 51)  # 0-50 pendek
+# tinggi_2 = numpy.linspace(51, 100, 50)  # 51-100 pendek mengengah
+# tinggi_3 = numpy.linspace(101, 150, 50)  # 101-150 menengah
+# tinggi_4 = numpy.linspace(151, 200, 50)  # 151-200 tinggi
+
 tinggi_1 = numpy.linspace(0, 50, 51)  # 0-50 pendek
-tinggi_2 = numpy.linspace(51, 100, 50)  # 51-100 pendek mengengah
-tinggi_3 = numpy.linspace(101, 150, 50)  # 101-150 menengah
-tinggi_4 = numpy.linspace(151, 200, 50)  # 151-200 tinggi
+tinggi_2 = numpy.linspace(48, 100, 53)  # 51-100 pendek mengengah
+tinggi_3 = numpy.linspace(98, 150, 53)  # 101-150 menengah
+tinggi_4 = numpy.linspace(148, 200, 53)  # 151-200 tinggi
+
 
 tinggi = []
 tinggi.append(tinggi_1)
@@ -42,10 +54,15 @@ tinggi.append(tinggi_2)
 tinggi.append(tinggi_3)
 tinggi.append(tinggi_4)
 
+# berat_1 = numpy.linspace(0, 50, 51)  # 0-50 lanjutin sendiri wkkw
+# berat_2 = numpy.linspace(51, 100, 50)  # 51-100
+# berat_3 = numpy.linspace(101, 150, 50)  # 101-150
+# berat_4 = numpy.linspace(151, 200, 50)  # 151-200
+
 berat_1 = numpy.linspace(0, 50, 51)  # 0-50 lanjutin sendiri wkkw
-berat_2 = numpy.linspace(51, 100, 50)  # 51-100
-berat_3 = numpy.linspace(101, 150, 50)  # 101-150
-berat_4 = numpy.linspace(151, 200, 50)  # 151-200
+berat_2 = numpy.linspace(48, 100, 53)  # 51-100
+berat_3 = numpy.linspace(198, 150, 53)  # 101-150
+berat_4 = numpy.linspace(148, 200, 53)  # 151-200
 
 berat = []
 berat.append(berat_1)
